@@ -109,7 +109,7 @@ bindsym $mod+r mode "resize"
 
 include ~/.config/i3/theme/theme.conf
 exec --no-startup-id feh --bg-fill ~/.config/i3/theme/akame/bg.png
-bindsym $mod+t exec --no-startup-id ~/.config/i3/toggle_theme.sh
+bindsym $mod+Shift+t exec --no-startup-id ~/.config/i3/toggle_theme.sh
 
 bindsym $mod+d exec --no-startup-id ~/.config/i3/dmenu.sh
 bindsym $mod+Shift+d exec --no-startup-id ~/.config/i3/flatpak_dmenu.sh

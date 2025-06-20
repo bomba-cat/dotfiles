@@ -2,7 +2,7 @@
 
 THEME_DIR="$HOME/.config/i3/theme"
 STATE_FILE="$THEME_DIR/.current_theme"
-AVAILABLE_THEMES=(akame madokami)
+AVAILABLE_THEMES=(akame madokami miku)
 
 # Get current theme
 if [ -f "$STATE_FILE" ]; then
