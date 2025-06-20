@@ -23,8 +23,6 @@ tiling_drag modifier titlebar
 
 bindsym $mod+Return exec kitty
 bindsym $mod+Shift+q kill
-bindsym $mod+d exec --no-startup-id dmenu_run -fn 'monospace-10' -nb '#250000' -nf '#ffffff' -sb '#ff0000' -sf '#ffffff' -l 10 -p "Run:"
-bindsym $mod+Shift+d exec --no-startup-id sh -c 'flatpak run $(ls /var/lib/flatpak/exports/share/applications | sed "s/\.desktop//" | dmenu -fn "monospace-10" -nb "#250000" -nf "#ffffff" -sb "#ff0000" -sf "#ffffff" -l 10 -p "Flatpak:")'
 
 bindsym $mod+j focus left
 bindsym $mod+k focus down
@@ -109,22 +107,9 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-bar {
-    position top
-    status_command i3status
+include ~/.config/i3/theme/theme.conf
+exec --no-startup-id feh --bg-fill ~/.config/i3/theme/akame/bg.png
+bindsym $mod+t exec --no-startup-id ~/.config/i3/toggle_theme.sh
 
-    colors {
-        background #250000
-        statusline #ffffff
-        separator  #ff4444
-        focused_workspace   #ff0000 #ff0000 #ffffff
-        active_workspace    #b71c1c #b71c1c #ffffff
-        inactive_workspace  #250000 #250000 #aaaaaa
-        urgent_workspace    #ff4444 #ff0000 #ffffff
-    }
-}
-
-client.focused          #ff0000 #ff0000 #ffffff #ff0000 #ff0000
-client.focused_inactive #b71c1c #b71c1c #ffffff #b71c1c #b71c1c
-client.unfocused        #250000 #250000 #aaaaaa #250000 #250000
-client.urgent          #ff4444 #ff0000 #ffffff #ff0000 #ff4444
+bindsym $mod+d exec --no-startup-id ~/.config/i3/dmenu.sh
+bindsym $mod+Shift+d exec --no-startup-id ~/.config/i3/flatpak_dmenu.sh
