@@ -46,10 +46,10 @@ if [ -f "$DMENU_CONF" ]; then
     cp "$DMENU_CONF" "$HOME/.config/i3/dmenu.conf"
 fi
 
-# Kill existing picom
-killall -q picom
+# sleep 0.5
+# If theme has a picom.conf, copy it
+PICOM_CONF_DEST="$HOME/.config/picom/picom.conf"
 
-# If theme has a picom.conf, start picom with it
 if [ -f "$THEME_DIR/$NEXT_THEME/picom.conf" ]; then
-    picom --config "$THEME_DIR/$NEXT_THEME/picom.conf" &
+    cp "$THEME_DIR/$NEXT_THEME/picom.conf" "$PICOM_CONF_DEST"
 fi
