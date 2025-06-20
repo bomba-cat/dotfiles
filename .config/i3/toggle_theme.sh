@@ -24,10 +24,10 @@ NEXT_THEME="${AVAILABLE_THEMES[$NEXT_INDEX]}"
 # Apply theme
 echo "$NEXT_THEME" > "$STATE_FILE"
 cp "$THEME_DIR/$NEXT_THEME/color.conf" "$THEME_DIR/theme.conf"
-feh --bg-scale "$THEME_DIR/$NEXT_THEME/bg.png"
+feh --bg-fill "$THEME_DIR/$NEXT_THEME/bg.png"
 
 i3-msg reload
-i3-msg restart
+#i3-msg restart
 
 # Optional: Apply kitty theme if exists
 KITTY_CONF_SRC="$THEME_DIR/$NEXT_THEME/kitty.conf"
